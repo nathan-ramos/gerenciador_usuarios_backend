@@ -1,4 +1,4 @@
-package com.dosramos.gerenciador.models;
+package br.com.dosramos.gerenciador.models;
 
 import java.util.List;
 import java.util.Set;

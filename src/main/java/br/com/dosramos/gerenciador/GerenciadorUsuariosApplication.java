@@ -1,4 +1,4 @@
-package com.dosramos.gerenciador;
+package br.com.dosramos.gerenciador;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
