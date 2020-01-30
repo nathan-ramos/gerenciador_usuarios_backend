@@ -9,7 +9,7 @@ import br.com.dosramos.gerenciador.models.Departamento;
 import br.com.dosramos.gerenciador.repository.DepartamentoRepository;
 
 @Service
-public class DepartamentoServiceImpl implements GerenciadorService{
+public class DepartamentoServiceImpl implements GerenciadorService<Departamento>{
 
 	@Autowired
 	private DepartamentoRepository repository;
@@ -30,7 +30,7 @@ public class DepartamentoServiceImpl implements GerenciadorService{
 		repository.save(entity);
 		
 	}
-
-
+	
+	
 
 }
