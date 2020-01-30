@@ -1,5 +1,6 @@
 package br.com.dosramos.gerenciador.services;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,7 @@ import br.com.dosramos.gerenciador.models.Departamento;
 import br.com.dosramos.gerenciador.repository.DepartamentoRepository;
 
 @Service
-public class DepartamentoServiceImpl implements GerenciadorService{
+public class DepartamentoServiceImpl implements GerenciadorService<Departamento>{
 
 	@Autowired
 	private DepartamentoRepository repository;
@@ -31,6 +32,11 @@ public class DepartamentoServiceImpl implements GerenciadorService{
 		
 	}
 
-
+	@Override
+	public List<Departamento> findAll() {
+		return repository.findAll();
+	}
+	
+	
 
 }
