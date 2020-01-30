@@ -2,6 +2,8 @@ package br.com.dosramos.gerenciador.integration.services;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +24,12 @@ public class DepartamentoServiceIntegrationTest {
 	public void findDepartamentoById() {
 		Departamento departamento = departamentoServiceImpl.findById(1L);
 		
-		System.err.println(departamento.getNome());
-		
 		assertThat(departamento.getIdDepartamento()).isEqualTo(1L);
+	}
+	@Test
+	public void findAllDepartaments() {
+		List<Departamento> departamentos = departamentoServiceImpl.findAll();
+		assertThat(departamentos).hasSizeGreaterThanOrEqualTo(1);
 		
 	}
 	
