@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Departamento {
 
@@ -25,6 +27,7 @@ public class Departamento {
 	@Column(name = "cod_departamento")
 	private long codDepartamento;
 	
+	@JsonManagedReference
 	@OneToMany(mappedBy = "departamento")
 	List<Usuario> usuarios;
 
