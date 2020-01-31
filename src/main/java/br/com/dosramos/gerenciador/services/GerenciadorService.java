@@ -7,4 +7,5 @@ public interface GerenciadorService<T> {
 	T findById(Long id);
 	void removeById(Long id);
 	List<T> findAll();
+	List<String> findAllNomes();
 }

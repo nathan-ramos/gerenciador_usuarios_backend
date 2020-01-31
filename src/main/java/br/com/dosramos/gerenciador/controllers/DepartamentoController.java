@@ -19,9 +19,13 @@ public class DepartamentoController {
 	@Qualifier("departamentoService")
 	private GerenciadorService gerenciadorService;
 	
-	@GetMapping
+	@GetMapping("/relacionamentos")
 	public List<Departamento> getAllDepartamentos(){
 		return gerenciadorService.findAll();
+	}
+	@GetMapping("/nomes/")
+	public List<String> findAllNomesDepartamentos(){
+		return gerenciadorService.findAllNomes();
 	}
 	
 }

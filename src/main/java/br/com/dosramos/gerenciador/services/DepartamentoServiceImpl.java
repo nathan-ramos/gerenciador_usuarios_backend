@@ -38,6 +38,12 @@ public class DepartamentoServiceImpl implements GerenciadorService<Departamento>
 	public List<Departamento> findAll() {
 		return repository.findAll();
 	}
+
+	@Override
+	public List<String> findAllNomes() {
+	return repository.findAllNomeByDepartamento();
+	}
+	
 	
 	
 
