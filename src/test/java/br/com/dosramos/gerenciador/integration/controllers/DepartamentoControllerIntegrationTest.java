@@ -33,12 +33,10 @@ public class DepartamentoControllerIntegrationTest {
 	@Test
 	public void listAllDepartaments() {
 		try {
-			var a = mockMvc.perform(get("/api/departamentos/")
+			var a = mockMvc.perform(get("/api/departamentos/relacionamentos/")
 					.contentType(MediaType.APPLICATION_JSON))
 					.andExpect(status().isOk())
 				    .andExpect(content().string(containsString("Desenvolvimento")));
-			
-			System.out.println("CLASSE DE TESTE DEPARTAMENTOCONTROLLERINTEGGRATIONTEST");
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -50,7 +48,7 @@ public class DepartamentoControllerIntegrationTest {
 	@Test
 	public void findAllDepartamentoNomes() {
 		try {
-			mockMvc.perform(get("/api/departamentos/nomes/")
+			mockMvc.perform(get("/api/departamentos/")
 					.contentType(MediaType.APPLICATION_JSON))
 					.andExpect(status().isOk())
 					.andExpect(content().string(not("id")));
