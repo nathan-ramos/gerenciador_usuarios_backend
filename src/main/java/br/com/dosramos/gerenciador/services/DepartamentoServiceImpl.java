@@ -20,7 +20,7 @@ public class DepartamentoServiceImpl implements GerenciadorService<Departamento>
 	@Override
 	public Departamento findById(Long id) throws NoSuchElementException{
 		
-		return repository.findById(id).orElseThrow();
+		return repository.findById(id).orElse(null);
 	}
 
 	@Override
@@ -38,6 +38,12 @@ public class DepartamentoServiceImpl implements GerenciadorService<Departamento>
 	public List<Departamento> findAll() {
 		return repository.findAll();
 	}
+
+	@Override
+	public List<String> findAllNomes() {
+	return repository.findAllNomeByDepartamento();
+	}
+	
 	
 	
 
